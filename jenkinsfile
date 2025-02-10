@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    tools {
+        maven 'Maven' // Replace with your Maven tool name
+    }
+        stage('Maven Build') {
+            steps {
+                dir("${Workspace}") { // Change directory directly
+                    bat "mvn clean package"
+                }
+            }
+        }
+    
+}
